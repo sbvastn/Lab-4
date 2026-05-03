@@ -148,7 +148,7 @@ void eraseTreeMap(TreeMap * tree, void* key){
 // Pair* nextTreeMap(TreeMap* tree) retornar el siguiente Pair del mapa a partir del puntero TreeNode* current. 
 // Recuerde actualizar este puntero.
 
-Pair * firstTreeMap(TreeMap * tree) 
+Pair * firstTreeMap(TreeMap * tree){
     if (tree == NULL || tree->root == NULL) return NULL;
 
     tree->current = minimum(tree->root);
