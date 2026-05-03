@@ -115,11 +115,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
 TreeNode * minimum(TreeNode * x){
     if (x == NULL) return NULL;
-
     while (x->left != NULL){
         x = x->left;
     }
-
     return x;
 }
 
@@ -132,7 +130,8 @@ TreeNode * minimum(TreeNode * x){
 // Reemplace los datos (key,value) de node con los del nodo "minimum". Elimine el nodo minimum (para hacerlo puede usar la misma función removeNode).
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-
+    if (tree == NULL) return NULL;
+    
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
@@ -149,12 +148,31 @@ void eraseTreeMap(TreeMap * tree, void* key){
 // Pair* nextTreeMap(TreeMap* tree) retornar el siguiente Pair del mapa a partir del puntero TreeNode* current. 
 // Recuerde actualizar este puntero.
 
-Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+Pair * firstTreeMap(TreeMap * tree) 
+    if (tree == NULL || tree->root == NULL) return NULL;
+
+    tree->current = minimum(tree->root);
+    return tree->current->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+        if (tree == NULL) return NULL;
+        TreeNode* aux = tree->current;
+        if (aux->right != NULL) {
+            aux = minimum(node->right);
+            tree->current = aux;
+            return aux->pair;
+        }
+        TreeNode* parent = aux->parent;
+        while (parent != NULL) {
+            aux = parent;
+            parent = parent->parent;
+        }
+        tree->current = parent;
+        if (parent != NULL)
+            return parent->pair;
+        return NULL;
+    }
 }
 
 // 7. La función Pair* upperBound(TreeMap* tree, void* key) retorna el Pair con clave igual a key. 
