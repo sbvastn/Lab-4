@@ -344,3 +344,9 @@ treemap.c:139:6: error: expected ‘}’ before ‘else’
   139 |      else if (node->left == NULL && node->right == NULL) {
       |      ^~~~
 e112f44
+Mon May  4 01:35:11 AM UTC 2026: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  29|0
+total_score: 60/60
+6a7c4af
