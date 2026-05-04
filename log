@@ -324,3 +324,13 @@ Mon May  4 01:16:56 AM UTC 2026:
  tests:  29|0
 total_score: 60/60
 17ed1ba
+Mon May  4 01:33:47 AM UTC 2026: 
+ treemap.c | 29 +++++++++++++++++++++--------
+ 1 file changed, 21 insertions(+), 8 deletions(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:139:6: error: expected ‘}’ before ‘else’
+  139 |      else if (node->left == NULL && node->right == NULL) {
+      |      ^~~~
+84957c6
